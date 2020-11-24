@@ -1,0 +1,67 @@
+server:
+  port: 8080
+  servlet:
+    context-path: ''
+  tomcat:
+    max-threads: 20
+  compression:
+    enabled: true
+
+spring:
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2-console
+      enabled: true
+  datasource:
+    schema: classpath*:db/install.sql
+    # 初始化数据导入
+    data: classpath*:db/data.sql
+    sql-script-encoding: utf-8
+
+    initialization-mode: always
+    continue-on-error: true
+
+    # h2 内存数据库 配置
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:${mfile.db.path};MODE=MYSQL;AUTO_SERVER=TRUE
+    username: mfile
+    password: 123456
+
+    # MySQL 配置
+  #    driver-class-name: com.mysql.jdbc.Driver
+  #    url: jdbc:mysql://127.0.0.1:3306/mfile?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+  #    username: root
+  #    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: GMT+8
+
+  resources:
+    chain:
+      gzipped: true
+  profiles:
+    active: prod
+
+mfile:
+  log:
+    path: ${user.home}/.mfile/logs
+  db:
+    # C:/Users/wei3.liu/.mfile/db/mfile
+    path: ${user.home}/.mfile/db/mfile
+  tmp:
+    path: ${user.home}/.mfile/tmp
+  cache:
+    auto-refresh:
+      interval: 1
+    timeout: 1800
+  constant:
+    readme: readme.md
+    password: password.txt
+  preview:
+      audio:
+          maxFileSizeMb: 5
+      text:
+          maxFileSizeKb: 512
+
