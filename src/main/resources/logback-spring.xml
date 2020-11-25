@@ -79,15 +79,12 @@
     <!-- jetCache logger -->
     <logger name="com.alicp" additivity="false" level="debug"/>
 
-    <!-- hibernate logger -->
-    <logger name="org.hibernate.SQL" additivity="false" level="debug"/>
-
     <springProfile name="dev">
-        <logger name="im.zhaojun" additivity="true" level="debug"/>
+        <logger name="ml.lwei.mfile" additivity="true" level="debug"/>
     </springProfile>
 
     <springProfile name="prod">
-        <logger name="im.zhaojun" additivity="true" level="debug"/>
+        <logger name="ml.lwei.mfile" additivity="true" level="debug"/>
     </springProfile>
 
     <!--
