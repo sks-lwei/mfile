@@ -7,7 +7,7 @@ import ml.lwei.mfile.model.entity.DriveConfig;
 import ml.lwei.mfile.model.enums.StorageTypeEnum;
 import ml.lwei.mfile.service.DriveConfigService;
 import ml.lwei.mfile.service.base.AbstractBaseFileService;
-import ml.lwei.mfile.util.SpringContextHolder;
+import ml.lwei.mfile.support.SpringContextHolder;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

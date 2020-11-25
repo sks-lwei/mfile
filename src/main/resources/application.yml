@@ -15,17 +15,16 @@ spring:
       path: /h2-console
       enabled: true
   datasource:
-    schema: classpath*:db/install.sql
     # 初始化数据导入
+    schema: classpath*:db/install-h2.sql
     data: classpath*:db/data.sql
     sql-script-encoding: utf-8
-
-    initialization-mode: always
+    initialization-mode: never
     continue-on-error: true
 
     # h2 内存数据库 配置
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:${mfile.db.path};MODE=MYSQL;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:${mfile.db.path};MODE=MYSQL;AUTO_SERVER=TRUE;DATABASE_TO_UPPER=FALSE
     username: mfile
     password: 123456
 
@@ -48,7 +47,7 @@ mfile:
   log:
     path: ${user.home}/.mfile/logs
   db:
-    # C:/Users/wei3.liu/.mfile/db/mfile
+    # C:/Users/wei3.liu/.mfile/db/mfile;MODE=MYSQL;AUTO_SERVER=TRUE
     path: ${user.home}/.mfile/db/mfile
   tmp:
     path: ${user.home}/.mfile/tmp

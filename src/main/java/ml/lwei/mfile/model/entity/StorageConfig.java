@@ -10,7 +10,7 @@ import ml.lwei.mfile.model.enums.StorageTypeEnum;
 /**
  * @author lwei
  */
-@TableName("STORAGE_CONFIG")
+@TableName("storage_config")
 @Data
 public class StorageConfig {
 

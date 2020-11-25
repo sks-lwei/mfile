@@ -8,7 +8,7 @@ import lombok.Data;
 /**
  * @author lwei
  */
-@TableName("FILTER_CONFIG")
+@TableName("filter_config")
 @Data
 public class FilterConfig {
 

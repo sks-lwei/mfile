@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * @author lwei
  */
-@TableName("SYSTEM_CONFIG")
+@TableName("system_config")
 @Data
 public class SystemConfig {
 

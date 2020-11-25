@@ -11,7 +11,7 @@ import ml.lwei.mfile.model.enums.StorageTypeEnum;
  *
  * @author lwei
  */
-@TableName("DRIVER_CONFIG")
+@TableName("driver_config")
 @Data
 public class DriveConfig {
 

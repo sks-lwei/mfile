@@ -1,4 +1,4 @@
-package ml.lwei.mfile.util;
+package ml.lwei.mfile.support;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 /**
+ * spring bean 上下文
  * @author lwei
  */
 @Service

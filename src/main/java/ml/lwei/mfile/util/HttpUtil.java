@@ -3,6 +3,7 @@ package ml.lwei.mfile.util;
 import lombok.extern.slf4j.Slf4j;
 import ml.lwei.mfile.exception.PreviewException;
 import ml.lwei.mfile.model.constant.ZFileConstant;
+import ml.lwei.mfile.support.SpringContextHolder;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
