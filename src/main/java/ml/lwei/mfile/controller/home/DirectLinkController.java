@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 /**
- * @author Zhao Jun
+ * @author lwei
  */
 @Controller
 public class DirectLinkController {

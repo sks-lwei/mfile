@@ -1,6 +1,5 @@
 package ml.lwei.mfile.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -12,7 +11,7 @@ import lombok.Data;
 @Data
 public class FilterConfig {
 
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Integer id;
 
     private Integer driveId;

@@ -69,7 +69,7 @@ mybatis-plus:
   type-aliases-package: ml.lwei.mfile.model.entity   # 实体扫描，多个package用逗号或者分号分隔
   typeEnumsPackage: ml.lwei.mfile.model.enums
 
-
+# 自定义信息
 mfile:
   log:
     path: ${user.home}/.mfile/logs

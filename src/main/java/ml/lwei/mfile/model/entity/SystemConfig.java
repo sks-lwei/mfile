@@ -1,6 +1,5 @@
 package ml.lwei.mfile.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,7 +12,7 @@ import lombok.Data;
 @Data
 public class SystemConfig {
 
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Integer id;
 
     @TableField("k")

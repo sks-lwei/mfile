@@ -1,6 +1,5 @@
 package ml.lwei.mfile.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -15,7 +14,7 @@ import ml.lwei.mfile.model.enums.StorageTypeEnum;
 @Data
 public class DriveConfig {
 
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Integer id;
 
     /**

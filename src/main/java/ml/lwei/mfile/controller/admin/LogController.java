@@ -33,7 +33,7 @@ public class LogController {
         String userHome = System.getProperty("user.home");
         File fileZip = ZipUtil.zip(userHome + "/.mfile/logs");
         String currentDate = DateUtil.format(new Date(), "yyyy-MM-dd HH:mm:ss");
-        return FileUtil.export(fileZip, "ZFile 诊断日志 - " + currentDate + ".zip");
+        return FileUtil.export(fileZip, "MFile 诊断日志 - " + currentDate + ".zip");
     }
 
 }
