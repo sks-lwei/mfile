@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ml.lwei.mfile.mapper.FilterConfigMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="ml.lwei.mfile.model.entity.FilterConfig">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="drive_id" property="driveId" jdbcType="BIGINT" />
+        <result column="expression" property="expression" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <sql id="column_list">
+        <![CDATA[
+            id,drive_id,expression
+        ]]>
+    </sql>
+
+    <select id="findByDriveId" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM filter_config
+        WHERE drive_id=#{driveId}
+    </select>
+
+    <delete id="deleteByDriveId">
+        DELETE FROM filter_config
+        WHERE drive_id=#{driveId}
+    </delete>
+
+</mapper>

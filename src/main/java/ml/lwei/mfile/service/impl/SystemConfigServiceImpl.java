@@ -51,7 +51,7 @@ public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, Sys
         }
 
         SystemConfigDTO systemConfigDTO = new SystemConfigDTO();
-        List<SystemConfig> systemConfigList = baseMapper.findAll();
+        List<SystemConfig> systemConfigList = super.list();
 
         for (SystemConfig systemConfig : systemConfigList) {
             String key = systemConfig.getKey();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ml.lwei.mfile.mapper.SystemConfigMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="ml.lwei.mfile.model.entity.SystemConfig">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="k" property="key" jdbcType="VARCHAR" />
+        <result column="value" property="value" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <sql id="column_list">
+        <![CDATA[
+            id,k,value,remark
+        ]]>
+    </sql>
+
+    <select id="findByKey" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM system_config
+        WHERE k=#{key}
+    </select>
+
+</mapper>

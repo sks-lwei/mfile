@@ -1,6 +1,7 @@
 package ml.lwei.mfile.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -12,7 +13,7 @@ import java.util.Collections;
 /**
  * @author lwei
  */
-//@Configuration
+@Configuration
 public class SysConfiguration {
 
     @Bean

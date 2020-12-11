@@ -31,7 +31,7 @@ create table "storage_config"
     "k"       VARCHAR(50) default NULL,
     "title"   VARCHAR(50) default NULL,
     "value"   VARCHAR(50) default NULL,
-    "driveid" INTEGER     default NULL,
+    "drive_id" INTEGER     default NULL,
     constraint STORAGE_CONFIG_PK
         primary key ("id")
 );

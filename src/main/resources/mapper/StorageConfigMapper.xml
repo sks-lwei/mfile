@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ml.lwei.mfile.mapper.StorageConfigMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="ml.lwei.mfile.model.entity.StorageConfig">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="VARCHAR" />
+        <result column="k" property="key" jdbcType="VARCHAR" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="value" property="value" jdbcType="VARCHAR" />
+        <result column="drive_id" property="driveId" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <sql id="column_list">
+        <![CDATA[
+            id,type,k,title,value,drive_id
+        ]]>
+    </sql>
+
+    <select id="findByTypeOrderById" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM storage_config
+        WHERE type=#{type}
+        ORDER BY id DESC
+    </select>
+
+    <select id="findByDriveIdOrderById" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM storage_config
+        WHERE drive_id=#{driveId}
+        ORDER BY id DESC
+    </select>
+
+    <select id="findByDriveId" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM storage_config
+        WHERE drive_id=#{driveId}
+    </select>
+
+    <delete id="deleteByDriveId">
+        DELETE
+        FROM storage_config
+        WHERE drive_id=#{driveId}
+    </delete>
+
+    <select id="findByDriveIdAndKey" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM storage_config
+        WHERE drive_id=#{driveId} AND k=#{key}
+    </select>
+
+</mapper>

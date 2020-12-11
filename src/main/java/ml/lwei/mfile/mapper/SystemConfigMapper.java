@@ -3,8 +3,6 @@ package ml.lwei.mfile.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ml.lwei.mfile.model.entity.SystemConfig;
 
-import java.util.List;
-
 /**
  * @author lwei
  */
@@ -20,5 +18,4 @@ public interface SystemConfigMapper extends BaseMapper<SystemConfig> {
      */
     SystemConfig findByKey(String key);
 
-    List<SystemConfig> findAll();
 }

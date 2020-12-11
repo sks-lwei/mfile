@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ml.lwei.mfile.mapper.DriverConfigMapper">
+    <!-- 通用映射 -->
+    <resultMap id="BaseResultMap" type="ml.lwei.mfile.model.entity.DriveConfig">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="enable" property="enable" jdbcType="BIT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="enable_cache" property="enableCache" jdbcType="BIT" />
+        <result column="auto_refresh_cache" property="autoRefreshCache" jdbcType="BIT" />
+        <result column="type" property="type" jdbcType="VARCHAR" />
+        <result column="search_enable" property="searchEnable" jdbcType="BIT" />
+        <result column="search_ignore_case" property="searchIgnoreCase" jdbcType="BIT" />
+        <result column="search_contain_encrypted_file" property="searchContainEncryptedFile" jdbcType="BIT" />
+        <result column="order_num" property="orderNum" jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <sql id="column_list">
+        <![CDATA[
+            id,enable,name,enable_cache,auto_refresh_cache,type,search_enable,search_ignore_case,search_contain_encrypted_file，order_num
+        ]]>
+    </sql>
+
+    <select id="findByType" resultMap="BaseResultMap">
+        SELECT <include refid="column_list"/>
+        FROM driver_config
+        WHERE type=#{type}
+    </select>
+
+</mapper>
