@@ -105,7 +105,7 @@ public class SystemConfigServiceImpl extends ServiceImpl<SystemConfigMapper, Sys
         }
 
         zFileCache.removeConfig();
-        super.saveBatch(systemConfigList);
+        super.updateBatchById(systemConfigList);
     }
 
 
